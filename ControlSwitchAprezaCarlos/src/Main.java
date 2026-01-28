@@ -1,40 +1,40 @@
 import java.util.Scanner;
 
 public class Main {
-    public static double a, b;
-    public static String Opcion;
+    public static double variableA, variableB;
+    public static String opcion;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         // Pedir datos
-        PedirNumeros(sc);
-        PedirOpciones(sc);
+        pedirNumeros(sc);
+        pedirOpciones(sc);
 
         // Resolver operación
-        double resultado = SwitchOpciones(sc);
+        double resultado = switchOpciones(sc);
 
         // Mostrar resultados
-        System.out.println("La opcion que eligiste fue: " + Opcion);
+        System.out.println("La opcion que eligiste fue: " + opcion);
         System.out.println("El resultado de la operacion es: " + resultado);
-        System.out.println("Los numeros ingresados fueron: a = " + a + " y b = " + b);
+        System.out.println("Los numeros ingresados fueron: a = " + variableA + " y b = " + variableB);
 
         sc.close();
     }
 
     // Metodo para pedir los numeros
-    public static void PedirNumeros(Scanner leer) {
+    public static void pedirNumeros(Scanner leer) {
         System.out.println("Ingrese el numero a:");
-        a = leer.nextDouble();
+        variableA = leer.nextDouble();
 
         System.out.println("Ingrese el numero b:");
-        b = leer.nextDouble();
+        variableB = leer.nextDouble();
 
         leer.nextLine();
     }
 
     // Metodo para que el usuario pueda pedir opciones
-    public static String PedirOpciones(Scanner leer) {
+    public static String pedirOpciones(Scanner leer) {
         System.out.println("Ingresa una opcion");
         System.out.println("Sumar");
         System.out.println("Restar");
@@ -42,34 +42,34 @@ public class Main {
         System.out.println("Dividir");
         System.out.println("Salir");
 
-        Opcion = leer.nextLine().trim().toLowerCase();
-        return Opcion;
+        opcion = leer.nextLine().trim().toLowerCase();
+        return opcion;
     }
 
     // Metodos para las operaciones
     public static double sumar() {
-        return a + b;
+        return variableA + variableB;
     }
 
     public static double restar() {
-        return a - b;
+        return variableA - variableB;
     }
 
     public static double multiplicar() {
-        return a * b;
+        return variableA * variableB;
     }
 
     public static double dividir() {
-        if (b == 0.0) {
+        if (variableB == 0.0) {
             System.out.println("No se puede dividir por cero");
             return 0;
         }
-        return a / b;
+        return variableA/ variableB;
     }
 
     // Metodo para el switch
-    public static double SwitchOpciones(Scanner leer) {
-        switch (Opcion) {
+    public static double switchOpciones(Scanner leer) {
+        switch (opcion) {
             case "sumar":
                 return sumar();
 
@@ -83,7 +83,7 @@ public class Main {
                 return dividir();
 
             case "salir":
-                System.out.println("Saliendo...");
+                System.out.println("Gracias por usar este programa");
                 return 0;
 
             default:
