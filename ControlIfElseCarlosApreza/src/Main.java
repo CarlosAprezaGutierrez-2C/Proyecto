@@ -16,10 +16,13 @@ public class Main {
 
     }
 
+    //Metodo para pedir al usuario la edad
     public static void ingresaEdad(Scanner sc){
         System.out.println("Ingresa tu edad");
         edad = sc.nextInt();
     }
+
+    //Metodo para validar si es estudiante o no
     public static void eresEstudiante(Scanner sc){
         if (edad <= 0 || edad >= 120) {
             System.out.println("Ingresa una edad valida");
@@ -35,6 +38,7 @@ public class Main {
 
 
     }
+    //Metodo para validar la edad y segun el caso imprimir en pantalla lo que le corresponde a cada condicion
     public static void validarEdad(Scanner sc){
         if (edad <= 0 || edad > 120) {
             System.out.println("ERROR INGRESA UNA EDAD VALIDA");
