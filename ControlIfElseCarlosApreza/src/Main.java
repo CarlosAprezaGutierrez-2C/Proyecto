@@ -9,6 +9,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ingresaEdad(sc);
         eresEstudiante(sc);
+       // validarEdad(sc);
+
+        System.out.println("la edad ingresada de la persona es de  :  "+edad);
+        System.out.println("La persona es estudiante? (true/false):  "+esEstudiante);
         validarEdad(sc);
 
     }
