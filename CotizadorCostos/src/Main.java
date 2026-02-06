@@ -21,7 +21,10 @@ public class Main {
         pesoKg = val.leerDoubleEnRango(input, "Ingresa el peso en kg (0.1 - 50)", 0.1, 50.0);
         distanciaKm = val.leerIntEnRango(input, "Ingresa la distancia en km (1 - 2000)", 1, 2000);
         esZonaRemota = val.leerBoolean(input, "¿Es zona remota? (true/false)");
+
         tipoServicio = val.leerIntEnRango(input, "Tipo de servicio (1 = Estándar, 2 = Express)", 1, 2);
+
+
 
         // PROCESO
         boleto.setPesoKg(pesoKg);

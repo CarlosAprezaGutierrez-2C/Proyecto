@@ -34,7 +34,7 @@ public class ShippingCalculator {
         if (tipoServicio == 1) {
             subtotal += 50;
         } else if (tipoServicio == 2) {
-            subtotal += 100;
+            subtotal += 90;
         }
 
         if (distanciaKm <= 50) {

@@ -30,6 +30,7 @@ public class inputValidation {
         while (true) {
             System.out.println(msg);
 
+
             if (sc.hasNextInt()) {
                 valor = sc.nextInt();
                 sc.nextLine();
