@@ -5,11 +5,11 @@ import java.util.Scanner;
 
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-
+            final double IVA=0.16;
             double subtotal = pedirDouble(scanner, "Subtotal: ");
-            double total = subtotal;
+            double calcularTotal = subtotal+(subtotal*IVA);
 
-            System.out.printf("Total a pagar: %.2f%n", total);
+            System.out.printf("Total a pagar: %.2f%n", calcularTotal);
         }
 
         public static double pedirDouble(Scanner scanner, String mensaje) {
