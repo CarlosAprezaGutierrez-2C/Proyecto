@@ -91,7 +91,7 @@ public class AppController {
                 data.setAll(items);
             }
 
-            // Feedback visual de éxito
+
             if (lblMsg != null) {
                 lblMsg.setText("Datos cargados exitosamente");
                 lblMsg.setStyle("-fx-text-fill: green;");
