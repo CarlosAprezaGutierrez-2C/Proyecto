@@ -44,7 +44,8 @@ public class PersonService {
 
     private void validatePerson(String name, String email,int edad){
          if (edad<0 || edad<18 || edad>100 ){
-             throw new IllegalArgumentException("La persona no puede ser menor de edad y tampoco se puede agregar u a persona con numeros negativos");
+             throw new IllegalArgumentException("La persona no puede ser menor de edad y tampoco se puede agregar una persona" +
+                     " con numeros negativos");
          }
         if(name==null || name.isBlank() || name.length()<3){
             throw new IllegalArgumentException("El nombre es incorrecto");

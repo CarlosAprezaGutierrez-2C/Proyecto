@@ -15,28 +15,21 @@ public class AppController {
 
     @FXML
     private ListView<String> listView;
-
     @FXML
     private Label lblMsg;
-
     @FXML
     private TextField txtName;
     @FXML
     private TextField txtEmail;
-
     @FXML
     private TextField txtEdad;
-
 
     // Se mantiene como final para proteger la referencia de la lista observable
     private final ObservableList<String> data = FXCollections.observableArrayList();
 
     private PersonService service = new PersonService();
 
-    /**
-     * El método initialize se ejecuta automáticamente después de que el FXML
-     * ha sido cargado y los elementos @FXML han sido inyectados.
-     */
+
     @FXML
     public void initialize() {
         // Vincula la lista de datos con el componente visual ListView
@@ -67,7 +60,7 @@ public class AppController {
             loadFromFile();
 
         } catch (NumberFormatException e) {
-            lblMsg.setText("La edad debe ser un número");
+            lblMsg.setText("La edad debe ser un número entero");
             lblMsg.setStyle("-fx-text-fill: red");
 
         } catch (IOException e) {
@@ -86,7 +79,7 @@ public class AppController {
             // Obtenemos la lista desde el servicio
             List<String> items = service.loadDataforList();
 
-            // Actualizamos la lista observable (esto refresca el ListView automáticamente)
+            // Actualizamos la lista observable (esto refresca el ListView automaticamente)
             if (items != null) {
                 data.setAll(items);
             }
