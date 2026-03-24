@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="683.0" prefWidth="751.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12"
+ xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicaparaexamen.Controller.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    
+    
+    </padding>
+   <children>
+      <TextField promptText="Ingresa tu nombre" fx:id="txtName" />
+      <TextField promptText="Ingresa tu telefono " fx:id="txtPhone"/>
+      <ComboBox prefWidth="150.0" fx:id="cbParentezco"/>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" text="Agregar" onAction="#onAdd" />
+            <Button mnemonicParsing="false" text="Buscar" onAction="#onSearch" />
+            <Button mnemonicParsing="false" text="Actualizar" onAction="#onUpdate" />
+            <Button mnemonicParsing="false" text="Eliminar" onAction="#onDelete"/>
+            <Button mnemonicParsing="false" text="Limpiar" onAction="#onClean" />
+         </children>
+      </HBox>
+      <ListView prefHeight="200.0" prefWidth="200.0" fx:id="lvlContactos" />
+   </children>
+</VBox>
