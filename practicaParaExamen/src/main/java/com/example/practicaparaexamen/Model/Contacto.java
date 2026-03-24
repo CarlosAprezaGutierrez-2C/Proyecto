@@ -21,25 +21,33 @@ public void setParentesco(String parentesco) {this.parentesco = parentesco;}
 
     @Override
 public String toString() {
-    return "Nombre: " + name + " | Teléfono: " + phone + " | Parentesco: " + parentesco;
+    return "Nombre: " + name + " | Telefono: " + phone + " | Parentesco: " + parentesco;
 }
-    public boolean validate(){
-    if (name.isEmpty() || parentesco==null || phone.isEmpty()  ){
-     return false;
-     }
-         try {
-         Long.parseLong(phone);
-          
-          } catch (NumberFormatException e) {
-           return false;
-          }
+public boolean validate(){
 
-     if (phone.length() !=10){
-     return false;
-      }
-      return true;
+    if (name == null || name.isEmpty()){
+        return false;
+    }
+
+    if (parentesco == null){
+        return false;
+    }
+
+    if (phone == null || phone.isEmpty()){
+        return false;
+    }
+
+    try{
+        Integer.parseInt(phone);
+    }catch(NumberFormatException e){
+        return false;
+    }
+
+    if (phone.length() != 10){
+        return false;
+    }
+
+    return true;
 }
 }
-
-
 

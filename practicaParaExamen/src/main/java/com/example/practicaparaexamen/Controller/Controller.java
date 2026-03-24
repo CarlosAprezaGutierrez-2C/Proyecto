@@ -2,7 +2,6 @@ package com.example.practicaparaexamen.Controller;
 
 import com.example.practicaparaexamen.Model.Contacto;
 import com.example.practicaparaexamen.Model.ContactoService;
-import com.example.practicaparaexamen.Model.ContactoService;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
@@ -47,28 +46,41 @@ public class Controller {
     }
 
     @FXML
-    public void onUpdate(){
-        if(service.updateContacto(txtName.getText(), txtPhone.getText(), cbParentezco.getValue())){
-            lvlContactos.getItems().clear();
-            service.getAll().forEach(contact -> lvlContactos.getItems().add(contact.toString()));
-            System.out.println("Contacto actualizado con éxito");
-        } else {
-            System.out.println("No se pudo actualizar el contacto");
-        }
-    }
+public void onUpdate(){
 
-    @FXML
-    public void onDelete(){
-        if(service.deleteContacto(txtName.getText())){
-            lvlContactos.getItems().clear();
-            service.getAll().forEach(contact -> lvlContactos.getItems().add(contact.toString()));
-            onClean();
-            System.out.println("Contacto eliminado con éxito");
-        } else {
-            System.out.println("No se pudo eliminar el contacto");
-        }
-    }
+    if(service.updateContacto(txtName.getText(), txtPhone.getText(), cbParentezco.getValue())){
 
+        lvlContactos.getItems().clear();
+
+        for (Contacto contact : service.getAll()) {
+            lvlContactos.getItems().add(contact.toString());
+        }
+
+        System.out.println("Contacto actualizado con exito");
+
+    } else {
+
+        System.out.println("No se pudo actualizar el contacto");
+
+    }
+}
+ @FXML
+public void onDelete(){
+    if(service.deleteContacto(txtName.getText())){
+
+        lvlContactos.getItems().clear();
+
+        for (Contacto contact : service.getAll()) {
+            lvlContactos.getItems().add(contact.toString());
+        }
+
+        onClean();
+        System.out.println("Contacto eliminado con exito");
+
+    } else {
+        System.out.println("No se pudo eliminar el contacto");
+    }
+}
     @FXML
     public void onClean(){
         txtName.clear();
