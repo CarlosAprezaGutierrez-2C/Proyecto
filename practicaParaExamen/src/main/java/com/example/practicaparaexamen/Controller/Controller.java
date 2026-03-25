@@ -29,7 +29,7 @@ public class Controller {
             lvlContactos.getItems().add(contacto.toString());
             onClean();
         } else {
-            System.out.println("Contacto inválido o duplicado");
+            System.out.println("Contacto invalido o duplicado");
         }
     }
 
